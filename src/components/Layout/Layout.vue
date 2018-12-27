@@ -30,6 +30,6 @@
     }
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
     @import index
 </style>
