@@ -10,12 +10,12 @@ Vue.config.productionTip = false;
 
 Vue.use(ElementUI);
 Vue.use(VueGoogleMaps, {
-    load: {
-        key: 'AIzaSyAUBNBnZojn7ExRqMjQr3B9iqe7yxlhjiA',
-        libraries: 'places,drawing,visualization'
-    }
+  load: {
+    key: 'AIzaSyAUBNBnZojn7ExRqMjQr3B9iqe7yxlhjiA',
+    libraries: 'places,drawing,visualization'
+  }
 });
 
 new Vue({
-    render: h => h(App),
+  render: h => h(App),
 }).$mount('#app');
