@@ -13,22 +13,7 @@
         </el-card>
       </el-aside>
       <el-main>
-        <GmapMap
-            :center="{lat:10, lng:10}"
-            :zoom="7"
-            map-type-id="terrain"
-        >
-          <GmapMarker
-              :clickable="true"
-              :draggable="true"
-              :key="index"
-              :position="m.position"
-              @click="center=m.position"
-              v-for="(m, index) in markers"
-          >
-
-          </GmapMarker>
-        </GmapMap>
+        <MyMap :center="map_data.center" :markers="map_data.markers"></MyMap>
       </el-main>
     </el-container>
     <el-footer>
@@ -38,10 +23,28 @@
 </template>
 
 <script>
+  import MyMap from "../MyMap/MyMap";
+
   export default {
     name: "Layout",
+    components: {MyMap},
     data: function () {
-      return {}
+      return {
+        map_data: {
+          center: {
+            lat: 10,
+            lng: 10
+          },
+          markers: [
+            {
+              position: {
+                lat: 30,
+                lng: 120
+              }
+            }
+          ]
+        }
+      }
     },
     mounted() {
 
