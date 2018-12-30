@@ -13,9 +13,23 @@
                 </el-card>
             </el-aside>
             <el-main>
-                <div id="gmap">
+                <GmapMap
+                        :center="{lat:10, lng:10}"
+                        :zoom="7"
+                        map-type-id="terrain"
+                        style="width: 500px; height: 300px"
+                >
+                    <GmapMarker
+                            :clickable="true"
+                            :draggable="true"
+                            :key="index"
+                            :position="m.position"
+                            @click="center=m.position"
+                            v-for="(m, index) in markers"
+                    >
 
-                </div>
+                    </GmapMarker>
+                </GmapMap>
             </el-main>
         </el-container>
         <el-footer>
@@ -26,7 +40,13 @@
 
 <script>
     export default {
-        name: "Layout"
+        name: "Layout",
+        data: function () {
+            return {}
+        },
+        mounted() {
+
+        }
     }
 </script>
 
