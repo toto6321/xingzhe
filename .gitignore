@@ -19,3 +19,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+
+# configuration
+src/config/google_map.js

@@ -6,12 +6,14 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 import * as VueGoogleMaps from 'vue2-google-maps'
 
+import {key} from './config/google_map'
+
 Vue.config.productionTip = false;
 
 Vue.use(ElementUI);
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyAUBNBnZojn7ExRqMjQr3B9iqe7yxlhjiA',
+    key: key,
     libraries: 'places,drawing,visualization'
   }
 });
