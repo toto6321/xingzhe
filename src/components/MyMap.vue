@@ -2,8 +2,18 @@
   <GmapMap
       :center="center"
       :zoom="zoom"
-      map-type-id="terrain"
+      :map-type-id="type_id"
   >
+    <GmapMarker
+        v-for="(m, index) in markers"
+        :key="index"
+        :position="m.position"
+        :clickable="true"
+        :draggable="true"
+        @click="center=m.position"
+    >
+
+    </GmapMarker>
   </GmapMap>
 </template>
 
@@ -16,6 +26,12 @@
         type: Number,
         default() {
           return 7
+        }
+      },
+      type_id:{
+        type: String,
+        default(){
+          return "terrain"
         }
       },
       center: {
