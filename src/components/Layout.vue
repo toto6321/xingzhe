@@ -31,16 +31,16 @@
     data: function () {
       return {
         map_data: {
-          zoom: 4,
+          zoom: 3,
           center: {
-            lat: 45,
-            lng: -85
+            lat: 30,
+            lng: 0
           },
           markers: [
             {
               position: {
-                lat: 30,
-                lng: 120
+                lat: 40,
+                lng: -90
               },
               title: 'China'
             }
