@@ -13,7 +13,7 @@
         </el-card>
       </el-aside>
       <el-main>
-        <MyMap :center="map_data.center" :markers="map_data.markers"></MyMap>
+        <my-map :center="map_data.center" :markers="map_data.markers"></my-map>
       </el-main>
     </el-container>
     <el-footer>
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import MyMap from "../MyMap/MyMap";
+  import MyMap from "./MyMap";
 
   export default {
     name: "Layout",
@@ -32,8 +32,8 @@
       return {
         map_data: {
           center: {
-            lat: 10,
-            lng: 10
+            lat: 45,
+            lng: -85
           },
           markers: [
             {
@@ -45,13 +45,41 @@
           ]
         }
       }
-    },
-    mounted() {
-
     }
   }
 </script>
 
-<style lang="sass">
-  @import index
+<style scoped lang="sass">
+  .layout
+    height: 1200px
+
+    .el-header
+      width: 100%
+      max-height: 10vh
+      background-color: aquamarine
+      display: flex
+      justify-content: center
+
+
+    .el-container
+      width: 100%
+      height: 100%
+
+
+      .el-aside
+        width: 5%
+        background-color: antiquewhite
+
+
+      .el-main
+        width: 95%
+        display: flex
+
+    .el-footer
+      width: 100%
+      max-height: 8vh
+      background-color: cadetblue
+      display: flex
+      justify-content: center
+
 </style>
