@@ -24,7 +24,8 @@
     data() {
       return {
         fileList: [],
-        latLng: {'lat': 361, 'lng': 361}
+        latLng: {'lat': 361, 'lng': 361},
+        datetime_original: undefined
       }
     },
     methods: {
@@ -35,7 +36,6 @@
         console.log(file)
       },
       handleBeforeUpload(image) {
-        // default faulty value
         const self = this;
         EXIF.getData(image, function () {
             const gps_latitude_array = EXIF.getTag(this, "GPSLatitude");
@@ -56,7 +56,9 @@
               lng = lng_positive_ref === gps_longitude_ref ? lng : -lng
             }
             self.latLng.lat = lat;
-            self.latLng.lng = lng
+            self.latLng.lng = lng;
+
+            self.datetime_original = EXIF.getTag(this, "DateTimeOriginal")
           }
         )
       }
