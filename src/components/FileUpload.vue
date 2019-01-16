@@ -30,10 +30,10 @@
     },
     methods: {
       handleRemove(file, fileList) {
-        console.log(file, fileList)
+        // console.log(file, fileList)
       },
       handlePreview(file) {
-        console.log(file)
+        // console.log(file)
       },
       handleBeforeUpload(image) {
         const self = this;
@@ -44,7 +44,7 @@
             const gps_longitude_ref = EXIF.getTag(this, "GPSLongitudeRef");
 
             // let latLng = {'lat': 360, 'lng': 360}
-            let lat = 0;
+            let lat = 30;
             let lng = 0;
             const lat_positive_ref = 'N';
             const lng_positive_ref = 'E';
@@ -58,7 +58,14 @@
             self.latLng.lat = lat;
             self.latLng.lng = lng;
 
-            self.datetime_original = EXIF.getTag(this, "DateTimeOriginal")
+            self.datetime_original = EXIF.getTag(this, "DateTimeOriginal");
+
+            self.$store.dispatch({
+              type: 'set_markers',
+              markers: [
+                {position: self.latLng, title: 'china'}
+              ]
+            })
           }
         )
       }

@@ -6,12 +6,12 @@
   >
     <GmapMarker
         @click="click_marker"
-        :key="index"
+        v-for="(m, index) in markers"
         :position="m.position"
         :title="m.title"
+        :key="index"
         :clickable="true"
         :draggable="true"
-        v-for="(m, index) in map_markers"
     >
 
     </GmapMarker>
@@ -22,16 +22,12 @@
 <script>
   export default {
     name: "my-map",
-    data: function () {
+    data() {
       return {
         map_center: this.center,
-        map_markers: this.markers,
         map_type_id: this.type_id,
         map_zoom: this.zoom
       }
-    },
-    mounted: function () {
-
     },
     methods: {
       click_marker: function (event) {
@@ -65,7 +61,7 @@
         type: Array,
         default() {
           return [
-            {position: {lat: 30, lng: 120}, title: 'China'}
+            {position: {lat: 30, lng: 0}, title: 'E'}
           ]
 
         }

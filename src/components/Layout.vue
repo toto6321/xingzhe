@@ -13,7 +13,7 @@
         </el-card>
       </el-aside>
       <el-main>
-        <my-map :center="map_data.center" :markers="map_data.markers" :zoom="map_data.zoom"></my-map>
+        <my-map :center="center" :markers="markers" :zoom="zoom"></my-map>
       </el-main>
     </el-container>
     <el-footer>
@@ -31,22 +31,16 @@
     components: {FileUpload, MyMap},
     data: function () {
       return {
-        map_data: {
-          zoom: 3,
-          center: {
-            lat: 30,
-            lng: 0
-          },
-          markers: [
-            {
-              position: {
-                lat: 40,
-                lng: -90
-              },
-              title: 'China'
-            }
-          ]
+        zoom: 3,
+        center: {
+          lat: 30,
+          lng: 0
         }
+      }
+    },
+    computed: {
+      markers: function () {
+        return this.$store.getters.get_markers
       }
     }
   }
