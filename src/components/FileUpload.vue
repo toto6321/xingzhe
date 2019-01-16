@@ -58,7 +58,15 @@
             self.latLng.lat = lat;
             self.latLng.lng = lng;
 
-            self.datetime_original = EXIF.getTag(this, "DateTimeOriginal")
+          self.datetime_original = EXIF.getTag(this, "DateTimeOriginal");
+
+          self.$store.dispatch({
+            type: 'set_markers',
+            markers: [
+              {'position': self.latLng}
+            ]
+          })
+          // console.log(self.$store.getters.get_markers)
           }
         )
       }
