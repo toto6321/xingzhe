@@ -30,10 +30,10 @@
     },
     methods: {
       handleRemove(file, fileList) {
-        console.log(file, fileList)
+        // console.log(file, fileList)
       },
       handlePreview(file) {
-        console.log(file)
+        // console.log(file)
       },
       handleBeforeUpload(image) {
         const self = this;
@@ -58,15 +58,15 @@
             self.latLng.lat = lat;
             self.latLng.lng = lng;
 
-          self.datetime_original = EXIF.getTag(this, "DateTimeOriginal");
+            self.datetime_original = EXIF.getTag(this, "DateTimeOriginal");
 
-          self.$store.dispatch({
-            type: 'set_markers',
-            markers: [
-              {'position': self.latLng}
-            ]
-          })
-          // console.log(self.$store.getters.get_markers)
+            self.$store.dispatch({
+              type: 'set_markers',
+              markers: [
+                {position: self.latLng, title: 'china'}
+              ]
+            })
+            // console.log(self.$store.getters.get_markers)
           }
         )
       }

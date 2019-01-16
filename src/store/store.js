@@ -12,13 +12,13 @@ const map_config_store = {
     markers: []
   },
   mutations: {
-    set_markers: (state, payload) => {
-      state.markers = payload.markers
+    set_markers: (state, markers) => {
+      state.markers = markers
     }
   },
   actions: {
-    set_markers({commit}, markers) {
-      commit('set_markers', {markers})
+    set_markers({commit}, payload) {
+      commit('set_markers', payload.markers)
     }
   },
   getters: {
