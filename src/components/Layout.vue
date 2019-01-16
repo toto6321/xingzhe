@@ -13,7 +13,7 @@
         </el-card>
       </el-aside>
       <el-main>
-        <my-map :center="map_data.center" :markers="map_data.markers"></my-map>
+        <my-map :center="map_data.center" :markers="map_data.markers" :zoom="map_data.zoom"></my-map>
       </el-main>
     </el-container>
     <el-footer>
@@ -31,16 +31,18 @@
     data: function () {
       return {
         map_data: {
+          zoom: 3,
           center: {
-            lat: 45,
-            lng: -85
+            lat: 30,
+            lng: 0
           },
           markers: [
             {
               position: {
-                lat: 30,
-                lng: 120
-              }
+                lat: 40,
+                lng: -90
+              },
+              title: 'China'
             }
           ]
         }
