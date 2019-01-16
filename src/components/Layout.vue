@@ -9,7 +9,7 @@
           <strong>name</strong>
         </el-card>
         <el-card>
-          <el-button>Upload</el-button>
+          <FileUpload></FileUpload>
         </el-card>
       </el-aside>
       <el-main>
@@ -24,10 +24,11 @@
 
 <script>
   import MyMap from "./MyMap";
+  import FileUpload from "./FileUpload";
 
   export default {
     name: "Layout",
-    components: {MyMap},
+    components: {FileUpload, MyMap},
     data: function () {
       return {
         map_data: {

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "element-ui": "^2.4.11",
+    "exif-js": "^2.3.0",
     "vue": "^2.5.17",
     "vue2-google-maps": "^0.10.5"
   },
@@ -22,7 +23,8 @@
     "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.28.3"
   },
   "eslintConfig": {
     "root": true,
