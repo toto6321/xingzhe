@@ -44,7 +44,7 @@
             const gps_longitude_ref = EXIF.getTag(this, "GPSLongitudeRef");
 
             // let latLng = {'lat': 360, 'lng': 360}
-            let lat = 0;
+            let lat = 30;
             let lng = 0;
             const lat_positive_ref = 'N';
             const lng_positive_ref = 'E';
@@ -66,7 +66,6 @@
                 {position: self.latLng, title: 'china'}
               ]
             })
-            // console.log(self.$store.getters.get_markers)
           }
         )
       }
